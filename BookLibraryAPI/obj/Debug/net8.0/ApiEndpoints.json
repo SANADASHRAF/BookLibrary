@@ -1,0 +1,86 @@
+[
+  {
+    "ContainingType": "BookLibraryAPI.Controller.BooksController",
+    "Method": "CreateBook",
+    "RelativePath": "api/Books/CreateBook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "BookLibraryAPI.DTO.BookDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateBook"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.BooksController",
+    "Method": "DeleteBook",
+    "RelativePath": "api/Books/DeleteBook",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "DeleteBook"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.BooksController",
+    "Method": "GetAllBook",
+    "RelativePath": "api/Books/GetAllBook",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetAllBook"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.BooksController",
+    "Method": "GetBookById",
+    "RelativePath": "api/Books/GetBookById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetBookById"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.BooksController",
+    "Method": "UpdateBook",
+    "RelativePath": "api/Books/UpdateBook",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "book",
+        "Type": "BookLibraryAPI.DTO.BookDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateBook"
+  }
+]

@@ -5,6 +5,136 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Author/GetAllAuthor": {
+      "get": {
+        "tags": [
+          "Author"
+        ],
+        "operationId": "GetAllAuthor",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Author/GetAuthorById": {
+      "get": {
+        "tags": [
+          "Author"
+        ],
+        "operationId": "GetAuthorById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Author/CreateAuthor": {
+      "post": {
+        "tags": [
+          "Author"
+        ],
+        "operationId": "CreateAuthor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Author/UpdateAuthor": {
+      "put": {
+        "tags": [
+          "Author"
+        ],
+        "operationId": "UpdateAuthor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Author/DeleteAuthor": {
+      "delete": {
+        "tags": [
+          "Author"
+        ],
+        "operationId": "DeleteAuthor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Books/GetAllBook": {
       "get": {
         "tags": [
@@ -138,6 +268,16 @@
   },
   "components": {
     "schemas": {
+      "AuthorDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BookDTO": {
         "type": "object",
         "properties": {
@@ -156,6 +296,10 @@
           "price": {
             "type": "number",
             "format": "double"
+          },
+          "authorId": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

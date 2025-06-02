@@ -10,5 +10,6 @@ namespace BookLibraryAPI.Contract
         Task UpdateAsync(string id, Book book);
         Task DeleteAsync(string id);
 
+
     }
 }

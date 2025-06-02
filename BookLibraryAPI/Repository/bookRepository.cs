@@ -8,35 +8,57 @@ namespace BookLibraryAPI.Repository
     public class bookRepository : IbookRepository
     {
 
-        private readonly IMongoCollection<Book> _booksCollection;
+        private readonly IMongoDbService _mongoDbService;
+        private const string CollectionName = "Books";
 
-        public bookRepository(IOptions<BookLibraryDatabaseSettings> bookLibraryDatabaseSettings, IMongoClient mongoClient)
+        public bookRepository(IMongoDbService mongoDbService)
         {
-            var database = mongoClient.GetDatabase(bookLibraryDatabaseSettings.Value.DatabaseName);
-            _booksCollection = database.GetCollection<Book>(bookLibraryDatabaseSettings.Value.BooksCollectionName);
+            _mongoDbService = mongoDbService;
         }
 
-        public async Task<List<Book>> GetAllAsync()=>
-           await _booksCollection.Find(book => true).ToListAsync();
-        
+        public async Task<List<Book>> GetAllAsync()
+        {
+            var filter = Builders<Book>.Filter.Empty;
+            return await _mongoDbService.FindAsync(CollectionName, filter);
+        }
 
-        public async Task<Book> GetByIdAsync(string id) =>
-             await _booksCollection.Find(book => book.Id == id).FirstOrDefaultAsync();
-        
+        public async Task<Book> GetByIdAsync(string id)
+        {
+            var filter = Builders<Book>.Filter.Eq(b => b.Id, id);
+            var result = await _mongoDbService.FindAsync(CollectionName, filter);
+            return result.FirstOrDefault();
+        }
 
-        public async Task CreateAsync(Book book) =>
-            await _booksCollection.InsertOneAsync(book);
-        
+        public async Task CreateAsync(Book book)
+        {
+            await _mongoDbService.InsertOneAsync(CollectionName, book);
+        }
 
-        public async Task UpdateAsync(string id, Book book) =>
-            await _booksCollection.ReplaceOneAsync(b => b.Id == id, book);
-        
+        public async Task UpdateAsync(string id, Book book)
+        {
+            var filter = Builders<Book>.Filter.Eq(b => b.Id, id);
+            var update = Builders<Book>.Update
+                .Set(b => b.Name, book.Name)
+                .Set(b => b.Title, book.Title)
+                .Set(b => b.AuthorId, book.AuthorId)
+                .Set(b => b.Price, book.Price);
+            var result = await _mongoDbService.UpdateOneAsync(CollectionName, filter, update);
+            if (!result)
+            {
+                throw new Exception("لم يتم العثور على الكتاب لتحديثه!");
+            }
+        }
 
-        public async Task DeleteAsync(string id) =>
-            await _booksCollection.DeleteOneAsync(book => book.Id == id);
+        public async Task DeleteAsync(string id)
+        {
+            var filter = Builders<Book>.Filter.Eq(b => b.Id, id);
+            var result = await _mongoDbService.DeleteOneAsync(CollectionName, filter);
+            if (!result)
+            {
+                throw new Exception("لم يتم العثور على الكتاب لحذفه!");
+            }
+        }
 
-
-        
     }
 
 }

@@ -1,5 +1,89 @@
 [
   {
+    "ContainingType": "BookLibraryAPI.Controller.AuthorController",
+    "Method": "CreateAuthor",
+    "RelativePath": "api/Author/CreateAuthor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Authordto",
+        "Type": "BookLibraryAPI.DTO.AuthorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateAuthor"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.AuthorController",
+    "Method": "DeleteAuthor",
+    "RelativePath": "api/Author/DeleteAuthor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "DeleteAuthor"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.AuthorController",
+    "Method": "GetAllAuthor",
+    "RelativePath": "api/Author/GetAllAuthor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetAllAuthor"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.AuthorController",
+    "Method": "GetAuthorById",
+    "RelativePath": "api/Author/GetAuthorById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetAuthorById"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.AuthorController",
+    "Method": "UpdateAuthor",
+    "RelativePath": "api/Author/UpdateAuthor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Authordto",
+        "Type": "BookLibraryAPI.DTO.AuthorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdateAuthor"
+  },
+  {
     "ContainingType": "BookLibraryAPI.Controller.BooksController",
     "Method": "CreateBook",
     "RelativePath": "api/Books/CreateBook",

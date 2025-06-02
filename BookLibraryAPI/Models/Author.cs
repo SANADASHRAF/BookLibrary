@@ -3,20 +3,11 @@ using MongoDB.Bson;
 
 namespace BookLibraryAPI.Models
 {
-    public class Book
+    public class Author
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         public string Name { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public decimal Price { get; set; }
-
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string AuthorId { get; set; }
     }
-
 }
-

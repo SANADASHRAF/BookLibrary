@@ -15,6 +15,8 @@ namespace BookLibraryAPI
             CreateMap<BookDTO, Book>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore());
 
+            CreateMap<Author, AuthorDto>().ReverseMap();
+
         }
 
 

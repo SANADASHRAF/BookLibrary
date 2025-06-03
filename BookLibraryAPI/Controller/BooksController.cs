@@ -33,6 +33,13 @@ namespace BookLibraryAPI.Controller
         }
 
 
+        [HttpGet(Name = "GetAuthorBooks")]
+        public async Task<IActionResult>GetAuthorBooks(string id)
+        {
+            var AuthorBook=await _bookRepository.GetAuthorBooks(id);
+            return Ok(AuthorBook);  
+        }
+
         [HttpGet(Name = "GetBookById")]
         public async Task<IActionResult> GetBookById(string id)
         {

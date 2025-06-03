@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xXL0OjN0GGg=",
+  "dgSpecHash": "8UuNA/9a0dQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\server egy\\Desktop\\BookLibraryAPI\\BookLibraryAPI.csproj",
+  "projectFilePath": "C:\\Users\\server egy\\Desktop\\BookLIbrary\\BookLibrary\\BookLibraryAPI\\BookLibraryAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\server egy\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\server egy\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

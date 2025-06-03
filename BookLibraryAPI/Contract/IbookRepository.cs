@@ -1,4 +1,5 @@
-﻿using BookLibraryAPI.Models;
+﻿using BookLibraryAPI.DTO;
+using BookLibraryAPI.Models;
 
 namespace BookLibraryAPI.Contract
 {
@@ -6,10 +7,11 @@ namespace BookLibraryAPI.Contract
     {
         Task<List<Book>> GetAllAsync();
         Task<Book> GetByIdAsync(string id);
-        Task CreateAsync(Book book);
+        Task<ResultBookWithAuthorDto> GetAuthorBooks(string id);
+        Task CreateAsync(Book book); 
         Task UpdateAsync(string id, Book book);
         Task DeleteAsync(string id);
 
-
+        
     }
 }

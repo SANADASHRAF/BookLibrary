@@ -1269,11 +1269,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\server egy\\Desktop\\BookLibraryAPI\\BookLibraryAPI.csproj",
+      "projectUniqueName": "C:\\Users\\server egy\\Desktop\\BookLIbrary\\BookLibrary\\BookLibraryAPI\\BookLibraryAPI.csproj",
       "projectName": "BookLibraryAPI",
-      "projectPath": "C:\\Users\\server egy\\Desktop\\BookLibraryAPI\\BookLibraryAPI.csproj",
+      "projectPath": "C:\\Users\\server egy\\Desktop\\BookLIbrary\\BookLibrary\\BookLibraryAPI\\BookLibraryAPI.csproj",
       "packagesPath": "C:\\Users\\server egy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\server egy\\Desktop\\BookLibraryAPI\\obj\\",
+      "outputPath": "C:\\Users\\server egy\\Desktop\\BookLIbrary\\BookLibrary\\BookLibraryAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

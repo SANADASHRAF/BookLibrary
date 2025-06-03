@@ -10,12 +10,14 @@ namespace BookLibraryAPI.Extention
     {
         public static IServiceCollection AddApiServices (this IServiceCollection services, IConfiguration configuration)
         {
+
             services.Configure<BookLibraryDatabaseSettings>(
                 configuration.GetSection("BookLibraryDatabaseSettings"));
 
-
             services.AddSingleton<IMongoClient>(sp =>
                 new MongoClient(configuration.GetSection("BookLibraryDatabaseSettings:ConnectionString").Value));
+
+
 
             services.AddSingleton<IMongoDbService, MongoDbService>();
 

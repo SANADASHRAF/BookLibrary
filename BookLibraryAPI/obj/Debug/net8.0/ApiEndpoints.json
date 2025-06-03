@@ -46,6 +46,17 @@
   },
   {
     "ContainingType": "BookLibraryAPI.Controller.AuthorController",
+    "Method": "GetAllAuthorWithBooks",
+    "RelativePath": "api/Author/GetAllAuthorWithBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetAllAuthorWithBooks"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.AuthorController",
     "Method": "GetAuthorById",
     "RelativePath": "api/Author/GetAuthorById",
     "HttpMethod": "GET",
@@ -127,6 +138,23 @@
     "Parameters": [],
     "ReturnTypes": [],
     "EndpointName": "GetAllBook"
+  },
+  {
+    "ContainingType": "BookLibraryAPI.Controller.BooksController",
+    "Method": "GetAuthorBooks",
+    "RelativePath": "api/Books/GetAuthorBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetAuthorBooks"
   },
   {
     "ContainingType": "BookLibraryAPI.Controller.BooksController",

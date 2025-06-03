@@ -18,6 +18,19 @@
         }
       }
     },
+    "/api/Author/GetAllAuthorWithBooks": {
+      "get": {
+        "tags": [
+          "Author"
+        ],
+        "operationId": "GetAllAuthorWithBooks",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Author/GetAuthorById": {
       "get": {
         "tags": [
@@ -141,6 +154,28 @@
           "Books"
         ],
         "operationId": "GetAllBook",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Books/GetAuthorBooks": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "operationId": "GetAuthorBooks",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
